@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body onload='start();' text='white'>
+
+  <h1>Config IP Addresses</h1>
+
+  <!-- Open Config IP readme in web browser -->
+  <h4>
+    <a href='' onclick="browser('https://github.com/BSMRKRS/RoboGUI-Electron/blob/master/docs/ip_config.md');"
+    style="color: #0000ff">Info about defining IP adresses</a>
+  </h4>
+
+  <!-- User input boxes for ip addresses -->
+  <p>Cameras: <input type="text" id='cameraIP'>
+    <input id="mjpg-checkBox" type="checkbox" checked>mjpg-streamer</p>
+  <p>Data: <input type="text" id='dataIP'></p>
+  <p>Controller: <input type="text" id='controllerIP'>
+    <select id='ControllerSelect'>
+      <option value="Master">Master</option>
+      <option value="Ax">Ax-12</option>
+      <option value="Arm">Arm</option>
+    </select></p>
+  <p>LIDAR: <input type="text" id='lidarIP'></p>
+
+  <!-- Okay button -->
+  <input type="submit" value="Okay"
+  onclick="ipSave();"/>
+
+  <!-- Cancel button -->
+  <input type="submit" value="Cancel"
+  onclick="window.close();"/>
+
+  <!-- Defualt button -->
+  <input type="submit" value="Defualt" style="float: right;"
+  onclick="defualtIP();"/>
+
+</body>
+<script type="text/javascript" src="ip.js"></script>
+<script src='ip_config.js'></script>
+
+</html>

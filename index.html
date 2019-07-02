@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    .rotateimg180 {
+      -webkit-transform:rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+    </style>
+    <meta charset="UTF-8">
+    <title>RoboGUI-Electron</title>
+  </head>
+
+  <body onload='start();' text = 'white'>
+
+    <!-- Buttons -->
+    <input type="submit" value="Run Controller-Support" onclick="Controller();"/>
+    <input type="submit" value="Flip Cameras" onclick="cameraRotate();"/>
+    <input type="submit" value="Kill Switch" onclick="kill();"/>
+
+    <!-- Cameras -->
+    <div>
+      <div id='camerasDiv'/>
+    </div>
+
+    <!-- RoboDiv -->
+    <div style="height:0" id='roboDiv'>
+
+      <!-- Lidar Image -->
+      <a href="lidarImg.html">
+        <img id='lidarIMG'>
+      </a>
+
+      <!-- Data/Post_to_web -->
+      <div style='display:inline-block;vertical-align:top;' width='320' height='240'>
+        <p id='data'></p>
+      </div>
+    </div>
+
+    <!-- Version Info -->
+    <h3>Version</h3>
+    RoboGUI v<script>document.write(require('electron').remote.app.getVersion())</script> <br />
+    Node <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+  </body>
+
+  <script type="text/javascript" src="ip.js"></script>
+  <script src='index.js'></script>
+
+</html>
